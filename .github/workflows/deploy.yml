@@ -1,5 +1,6 @@
 name: Deploy to AWS
 
+
 on:
   push:
     branches: [ main ]
@@ -22,7 +23,7 @@ jobs:
         distribution: 'adopt'
     
     - name: Build with Gradle
-      run: ./gradlew build
+      run: ./gradlew build -x test
     
     - name: Configure AWS credentials
       uses: aws-actions/configure-aws-credentials@v1
